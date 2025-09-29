@@ -4,7 +4,7 @@
   "description": "IntelliSense for primeflex library",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.104.0"
+    "vscode": "^1.103.2"
   },
   "categories": [
     "Other"
