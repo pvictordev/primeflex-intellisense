@@ -1,26 +1,31 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import { ExtensionContext, workspace as Workspace } from "vscode";
+import { CONFIG } from "./env";
+import { getRelativeConfiguration } from "./helpers/getRelativeConfiguration";
+import { ExtensionManager } from "./core/ExtensionManager";
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+let manager: ExtensionManager;
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "primeflex-intellisense" is now active!');
+export const activate = (context: ExtensionContext) => {
+  const workspaceConfig = getRelativeConfiguration(CONFIG);
+  const isEnabled = workspaceConfig.get("enabled", true);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('primeflex-intellisense.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from primeflex-intellisense!');
-	});
+  manager = new ExtensionManager(context);
 
-	context.subscriptions.push(disposable);
-}
+  const onChangeConfig = Workspace.onDidChangeConfiguration((event) => {
+    if (event.affectsConfiguration("primeflex.enabled")) {
+      const config = getRelativeConfiguration(CONFIG);
+      const enabled = config.get("enabled", true);
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+      enabled ? manager.start() : manager.deactivate();
+    }
+  });
+
+  context.subscriptions.push(onChangeConfig);
+  isEnabled ? manager.start() : manager.deactivate();
+};
+
+export const deactivate = () => {
+  if (manager) {
+    manager.deactivate();
+  }
+};

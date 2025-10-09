@@ -1,23 +1,74 @@
 {
   "name": "primeflex-intellisense",
   "displayName": "primeflex-intellisense",
-  "description": "IntelliSense for primeflex library",
+  "license": "MIT",
+  "icon": "assets/primetek-logo.png",
+  "publisher": "pvictordev",
+  "author": {
+    "name": "Victor Purice",
+    "email": "pvictor0110@gmail.com",
+    "url": "https://github.com/pvictordev"
+  },
+  "description": "Intelligent PrimeFlex tooling for VS Code",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.103.2"
   },
-  "categories": [
-    "Other"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pvictordev/primeflex-intellisense"
+  },
+  "keywords": [
+    "primeflex",
+    "primereact",
+    "primevue",
+    "primefaces"
   ],
-  "activationEvents": [],
+  "categories": [
+    "Snippets",
+    "Linters",
+    "Themes"
+  ],
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:xhtml",
+    "onLanguage:vue",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "primeflex-intellisense.helloWorld",
-        "title": "Hello World"
+        "command": "primeflex.restart",
+        "title": "Restart Colors",
+        "category": "PrimeFlex"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "primeflex",
+      "properties": {
+        "primeflex.theme": {
+          "type": "string",
+          "scope": "resource",
+          "default": "./src/styles/primeflex.css",
+          "description": "Path to the CSS file that defines the color theme."
+        },
+        "primeflex.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Enable/disable the autocomplete."
+        },
+        "primeflex.classAttributes": {
+          "type": "array",
+          "default": [],
+          "scope": "resource",
+          "description": "The HTML class attributes for which to provide class completions."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
