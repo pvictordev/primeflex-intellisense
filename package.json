@@ -2,7 +2,7 @@
   "name": "primeflex-intellisense",
   "displayName": "primeflex-intellisense",
   "license": "MIT",
-  "icon": "assets/primetek-logo.png",
+  "icon": "assets/primeflex-logo.png",
   "publisher": "pvictordev",
   "author": {
     "name": "Victor Purice",
@@ -52,7 +52,7 @@
         "primeflex.theme": {
           "type": "string",
           "scope": "resource",
-          "default": "./src/styles/primeflex.css",
+          "default": "./src/styles/index.css",
           "description": "Path to the CSS file that defines the color theme."
         },
         "primeflex.enabled": {

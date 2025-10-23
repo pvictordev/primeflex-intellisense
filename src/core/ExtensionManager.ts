@@ -104,7 +104,7 @@ export class ExtensionManager {
 
     const customTheme = this.workspaceConfig!.get(
       "customTheme",
-      "./src/styles/primeflex.css"
+      "./src/styles/index.css"
     );
     Window.showInformationMessage(`Restarted colors, path: ${customTheme}`);
   }
