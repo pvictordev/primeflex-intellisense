@@ -1,6 +1,6 @@
-# Primeflex IntelliSense
+# PrimeFlex IntelliSense
 
-Primeflex IntelliSense enhances the [PrimeFlex](https://primefaces.org/primeflex/) development experience by providing Visual Studio Code users with smart class name completions, color previews, and seamless integration with your style variables.
+PrimeFlex IntelliSense enhances the [PrimeFlex](https://primefaces.org/primeflex/) development experience by providing Visual Studio Code users with smart class name completions, color previews, and seamless integration with your style variables.
 
 ## Installation
 
@@ -26,7 +26,7 @@ Preview color variables inline for quick visual reference when working with cust
 
 ### Fast Context Switching
 
-Navigate between multiple projects smoothly. You can control whether Primeflex IntelliSense is active globally or per workspace.
+Navigate between multiple projects smoothly. You can control whether PrimeFlex IntelliSense is active globally or per workspace.
 
 ---
 
@@ -54,7 +54,7 @@ Defines the CSS file containing the variables that PrimeFlex IntelliSense uses.
 
 ### `primeflex.enabled`
 
-Control whether Primeflex IntelliSense is active per project or globally.
+Control whether PrimeFlex IntelliSense is active per project or globally.
 By default, it’s enabled everywhere — but you can customize this in your workspace settings:
 
 ```json
@@ -87,6 +87,6 @@ Specifies which HTML attributes provide class completions.
 If you’re not seeing IntelliSense suggestions:
 
 - Ensure your configured `primeflex.theme` path points to a valid CSS file.
-- Run `Primeflex: Restart Colors` after updating your styles.
+- Run `PrimeFlex: Restart Colors` after updating your styles.
 - Check your workspace settings to confirm the extension is enabled.
 - Reload VS Code after changing any related configuration.
