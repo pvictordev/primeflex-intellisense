@@ -53,7 +53,7 @@ export class ColorDecorationManager {
 
     const customTheme = workspaceConfig.get(
       "customTheme",
-      "./src/styles/index.css"
+      "./src/styles/primeflex.css"
     );
     const customThemePath = joinPath(currentWorkspace.uri.path, customTheme);
 

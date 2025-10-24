@@ -75,7 +75,9 @@ export class ExtensionManager {
 
   restart() {
     if (!this.isEnabled) {
-      Window.showInformationMessage("Primeflex workspace is disabled!");
+      Window.showInformationMessage(
+        "Primeflex IntelliSense workspace is disabled!"
+      );
       return;
     }
 
@@ -104,9 +106,9 @@ export class ExtensionManager {
 
     const customTheme = this.workspaceConfig!.get(
       "customTheme",
-      "./src/styles/index.css"
+      "./src/styles/primeflex.css"
     );
-    Window.showInformationMessage(`Restarted colors, path: ${customTheme}`);
+    Window.showInformationMessage(`Restarted colors - path: ${customTheme}`);
   }
 
   updateWorkspace(workspace: WorkspaceFolder) {

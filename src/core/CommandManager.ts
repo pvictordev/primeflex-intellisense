@@ -1,6 +1,5 @@
 import { commands as Commands, ExtensionContext } from "vscode";
 import { ExtensionManager } from "./ExtensionManager";
-import * as vscode from "vscode";
 
 export class CommandManager {
   private manager: ExtensionManager;

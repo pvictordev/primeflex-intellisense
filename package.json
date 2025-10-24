@@ -52,7 +52,7 @@
         "primeflex.theme": {
           "type": "string",
           "scope": "resource",
-          "default": "./src/styles/index.css",
+          "default": "./src/styles/primeflex.css",
           "description": "Path to the CSS file that defines the color theme."
         },
         "primeflex.enabled": {
