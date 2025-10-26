@@ -4,7 +4,7 @@ PrimeFlex IntelliSense enhances the [PrimeFlex](https://primefaces.org/primeflex
 
 ## Installation
 
-**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=yourpublisher.primeflex-intellisens)**
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=pvictordev.primeflex-intellisense)**
 
 Once installed, the extension automatically activates when a supported project containing PrimeFlex classes or your defined stylesheet variables is detected.
 
