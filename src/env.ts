@@ -5,4 +5,6 @@ export const LANG = [
   "javascriptreact",
   "typescriptreact",
   "vue",
+  "vue-html",
+  "vue-template-interpolation-expression",
 ];
