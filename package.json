@@ -10,7 +10,7 @@
     "url": "https://github.com/pvictordev"
   },
   "description": "Intelligent PrimeFlex tooling for VS Code",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.103.2"
   },
