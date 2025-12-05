@@ -38,15 +38,6 @@ export class ExtensionManager {
   }
 
   start() {
-    const editor = Window.activeTextEditor;
-
-    if (editor) {
-      const workspace = Workspace.getWorkspaceFolder(editor.document.uri);
-      if (workspace) {
-        this.updateWorkspace(workspace);
-      }
-    }
-
     this.completionProvider = new CompletionProvider(this);
     this.completionProvider.register(this.context);
 
@@ -55,7 +46,13 @@ export class ExtensionManager {
     this.eventManager = new EventManager(this);
     this.eventManager.register(this.context);
 
+    const editor = Window.activeTextEditor;
+
     if (editor) {
+      const workspace = Workspace.getWorkspaceFolder(editor.document.uri);
+      if (workspace) {
+        this.updateWorkspace(workspace);
+      }
       this.colorManager.render(editor);
     }
   }
